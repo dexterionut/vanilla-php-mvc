@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Core\Model;
 
-class Test
+class Test extends Model
 {
+    public static $tableName = 'test';
 
 }

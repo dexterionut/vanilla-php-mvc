@@ -2,8 +2,7 @@
 
 namespace App\Core;
 
-// A Dependency-Injection Container
-class App
+class DependencyContainer
 {
     protected static $registry = [];
 
