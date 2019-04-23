@@ -1,4 +1,6 @@
 <?php
+
+// PSR-4 Autoload
 spl_autoload_register(function (String $class) {
 
     $sourcePath = __DIR__ . DIRECTORY_SEPARATOR . 'src';
