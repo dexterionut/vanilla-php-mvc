@@ -46,7 +46,7 @@ class Router
 
             $this->callAction($request, $controller, $action);
         } else {
-            echo Helper::jsonResponse(['message' => 'Route is inexistent!'], 404);
+            echo Helper::jsonResponse(['message' => "Route doesn't exist."], 404);
         }
     }
 
