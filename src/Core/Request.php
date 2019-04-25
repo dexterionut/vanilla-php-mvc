@@ -16,6 +16,7 @@ class Request
         $this->setUri();
         $this->setMethod();
 
+        // handle json requests as $_POST variables
         if (empty($_POST)) {
             $_POST = json_decode(file_get_contents("php://input"), true) ?: [];
         }
@@ -40,8 +41,12 @@ class Request
     public function setUri(): void
     {
         $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+        // check if app is installed in subfolder
         if (($appSubfolder = Helper::getAppSubfolder()) !== false) {
             $replaceString = $appSubfolder . '/';
+
+            // remove the subfolder from $url path before navigating to route
             $url = str_replace($replaceString, '', $url);
         }
 
