@@ -3,9 +3,10 @@
 namespace App\Core\Database;
 
 
+use App\Core\Contracts\IConnection;
 use \PDO;
 
-class Connection
+class Connection implements IConnection
 {
     public static function make(array $config)
     {

@@ -2,8 +2,11 @@
 
 namespace App\Core;
 
-// A class responsible for mapping requests to its controller.
-class Router
+
+use App\Core\Contracts\IRequest;
+use App\Core\Contracts\IRouter;
+
+class Router implements IRouter
 {
     protected $routes = [
         'GET' => [],
@@ -33,9 +36,9 @@ class Router
     }
 
     /**
-     * @param Request $request
+     * @param IRequest $request
      */
-    public function navigateTo(Request $request)
+    public function navigateTo(IRequest $request)
     {
         $uri = $request->getUri();
         $method = $request->getMethod();

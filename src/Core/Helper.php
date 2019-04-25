@@ -38,6 +38,6 @@ class Helper
         // return the encoded json
         return json_encode(array_merge([
             'status' => $code < 300 ? 'success' : 'failed', // success or not?
-        ], $response));
+        ], $response), JSON_NUMERIC_CHECK);
     }
 }

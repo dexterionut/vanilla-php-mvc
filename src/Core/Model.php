@@ -3,6 +3,7 @@
 namespace App\Core;
 
 
+use App\Core\Contracts\IModel;
 use App\Core\Database\QueryBuilder;
 
 class Model implements IModel
@@ -22,9 +23,10 @@ class Model implements IModel
         return static::$tableName;
     }
 
-    public static function selectAll()
+
+    public static function selectAll(): array
     {
         return static::getQueryBuilder()
-            ->selectAll(static::getTableName());
+            ->selectAll(static::getTableName(), get_called_class());
     }
 }

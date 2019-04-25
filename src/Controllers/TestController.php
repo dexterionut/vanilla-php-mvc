@@ -2,14 +2,19 @@
 
 namespace App\Controllers;
 
+use App\Core\Contracts\IRequest;
 use App\Models\Test;
 
 class TestController
 {
-    public function sum()
+    public function sum(IRequest $request)
     {
+        $a = $request->getParamValue('a');
+        $result = Test::selectAll();
         return [
-            'result' => Test::selectAll()
+            'a' => $a,
+            'result' => $result,
+            'typeof' => get_class($result[0])
         ];
     }
 }

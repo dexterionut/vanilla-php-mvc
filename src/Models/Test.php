@@ -8,4 +8,6 @@ class Test extends Model
 {
     public static $tableName = 'test';
 
+    protected $secondName;
+
 }

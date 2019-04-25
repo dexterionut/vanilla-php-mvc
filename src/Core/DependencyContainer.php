@@ -2,7 +2,9 @@
 
 namespace App\Core;
 
-class DependencyContainer
+use App\Core\Contracts\IDependencyContainer;
+
+class DependencyContainer implements IDependencyContainer
 {
     protected static $registry = [];
 

@@ -2,8 +2,9 @@
 
 namespace App\Core;
 
-// A class responsible for accessing request-related data.
-class Request
+use App\Core\Contracts\IRequest;
+
+class Request implements IRequest
 {
     private $uri;
     private $method;
